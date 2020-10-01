@@ -1,0 +1,162 @@
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.header {
+  padding: 2rem 0 6rem 0;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  padding-bottom: 2rem;
+  font-weight: 500;
+}
+
+.header form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.header input,
+.header button {
+  outline: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+.header input {
+  width: 35rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.header input::placeholder {
+  color: var(--dark-gray);
+}
+
+.header button {
+  cursor: pointer;
+  background-color: #23272b;
+  background-image: url(./images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  padding: 1rem 1.8rem;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.header button:hover {
+  background-color: #343a40;
+}
+
+.result {
+  position: relative;
+  width: 100%;
+}
+
+.result > div {
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.result h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.result p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.result > div > div:not(:first-of-type) {
+  padding-left: 3rem;
+  border-left: rgba(0, 0, 0, 0.1) solid 1px;
+}
+
+.leaflet-container {
+  width: 100%;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .result > div {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .result > div > div:not(:first-of-type) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .result > div > div:not(:last-of-type) p {
+    padding-bottom: 1.2rem;
+  }
+
+  .result h2 {
+    font-size: 0.6rem;
+  }
+
+  .result p {
+    font-size: 1.2rem;
+  }
+}
